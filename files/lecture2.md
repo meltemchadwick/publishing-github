@@ -1,182 +1,182 @@
-# Lecture 1: AI Basics for Central Bankers
+# Lecture 2: Prompting and Workflow Patterns for Policy-Grade AI Use
 
 **Course:** AI Tools for Central Bankers (2 hours)  
-**Lecture:** 1 of X  
-**Audience:** Central bank economists, supervisors, and policy professionals  
-**Goal:** Build a clear mental model of what modern AI is, what it is not, and how to use it responsibly in policy and supervision settings.
+**Lecture:** 2 of X  
+**Goal:** Turn AI from a novelty into a disciplined tool by learning how to specify tasks, constrain outputs, and verify results to a central bank standard.
 
 ---
 
-## 1) Why central bankers should care about AI
+## 1) Learning objectives
 
-AI is not a new mandate, but it is a new production technology for knowledge work. It can lower the cost of drafting, summarising, coding, and searching. It can also amplify errors, bias, and overconfidence if it is used without governance. Central banks care for three reasons:
+By the end of this lecture, participants will be able to:
 
-1. **Productivity in analysis and communication:** faster drafting, clearer synthesis, better internal documentation.
-2. **Risk management:** model risk, operational risk, confidentiality, and reputational risk.
-3. **Policy and supervision relevance:** AI is changing the private sector, including credit allocation, payment systems, and risk management tools.
-
----
-
-## 2) A simple taxonomy of AI
-
-### 2.1 Artificial intelligence (AI)
-A broad term for systems that perform tasks that usually require human intelligence, such as perception, prediction, and language.
-
-### 2.2 Machine learning (ML)
-A subset of AI where systems learn patterns from data to make predictions or decisions.  
-Examples: credit scoring models, fraud detection, forecasting models.
-
-### 2.3 Deep learning
-A subset of ML using neural networks with many layers. It performs well in areas like speech, images, and language.
-
-### 2.4 Generative AI
-Models that generate text, images, code, audio, or other content.  
-Examples: drafting a briefing note, proposing code, summarising a paper.
-
-**Key point:** Generative AI is often a language and pattern engine, not a truth engine.
+1. Write prompts that function as clear task specifications (purpose, audience, constraints, format).
+2. Use reliable workflow patterns for drafting, summarising, coding support, and research synthesis.
+3. Reduce common failure modes (invented facts, spurious precision, misleading coherence) using structured checks.
+4. Create outputs that are easier to audit, including assumptions lists, verification items, and decision logs.
+5. Apply safe-use practices for confidentiality and institutional credibility.
 
 ---
 
-## 3) What a modern language model is doing
+## 2) The core idea: prompting is specification, not conversation
 
-A large language model (LLM) is trained to predict the next token (a piece of a word) given the previous tokens. Through training on large text corpora, the model learns statistical regularities of language and of the content embedded in that language.
+In central banking, good outputs come from good specifications. Treat the prompt like a terms of reference:
 
-### 3.1 Why it can feel intelligent
-- It can produce fluent, coherent text.
-- It can follow instructions reasonably well.
-- It can mimic styles and formats.
-- It can generalise across domains.
+- **Task:** What you want produced.
+- **Audience:** Who will read it and what they care about.
+- **Scope:** What is in and what is out.
+- **Constraints:** What the tool must not do (no invented facts, no guessing numbers).
+- **Format:** Memo, bullets, table, slide notes, code, checklist.
+- **Verification:** What must be checked before use.
 
-### 3.2 Why it can be wrong even when confident
-- It optimises for plausible continuation, not verified truth.
-- It may fill gaps with invented details.
-- It may cite sources that do not exist if you do not constrain it.
-- It may be sensitive to prompt wording and context.
-
-**Rule for policy work:** Treat outputs as drafts and hypotheses, not as evidence.
+**Practical rule:** If you cannot explain the task clearly to a colleague, the tool will also struggle.
 
 ---
 
-## 4) Core concepts you should know
+## 3) Prompt templates you can reuse
 
-### 4.1 Training, fine-tuning, and prompting
-- **Training:** learning general patterns from large datasets.
-- **Fine-tuning:** adjusting a model to do better on a narrower task or domain.
-- **Prompting:** giving instructions and context to guide outputs at use time.
-
-### 4.2 Context window
-Models have a limit to how much text they can consider at once. Long documents may need chunking or summarisation, which can lose nuance.
-
-### 4.3 Retrieval-Augmented Generation (RAG)
-A method where the model pulls relevant information from a trusted document store before answering. This can reduce hallucinations and improve traceability.
-
-### 4.4 Temperature and variability
-Some systems allow you to control how deterministic the output is. Higher variability can help brainstorming but can hurt consistency.
-
----
-
-## 5) Where AI is useful in central banking
-
-### 5.1 High-value, lower-risk tasks
-- Drafting internal notes and outlines.
-- Summarising papers and meeting notes.
-- Converting bullet points to clear prose.
-- Editing for clarity and consistency.
-- Generating code scaffolds and documentation.
-- Creating checklists, templates, and standard operating procedures.
-
-### 5.2 High-value, higher-risk tasks (needs safeguards)
-- Interpreting market-moving information.
-- Producing policy recommendations.
-- Analysing supervisory cases with confidential data.
-- Generating quantitative claims or statistics.
-- Drafting external communications under time pressure.
-
-**Practical guidance:** Use AI most aggressively for structure, wording, and workflow acceleration. Use it more cautiously for facts, numbers, and causal claims.
-
----
-
-## 6) Typical failure modes and how to defend against them
-
-### 6.1 Hallucination (fabricated facts)
-**Defence:** request sources, verify against primary material, and require an assumptions list.
-
-### 6.2 Spurious precision
-Models can produce confident numbers, dates, or references.  
-**Defence:** disallow invented statistics and require explicit citation or “unknown”.
-
-### 6.3 Misleading coherence
-A coherent narrative can hide weak logic.  
-**Defence:** ask for alternative explanations, counterarguments, and what would falsify the claim.
-
-### 6.4 Prompt sensitivity
-Small wording changes can shift outputs.  
-**Defence:** use standard prompt templates and keep an audit trail of key prompts.
-
-### 6.5 Data confidentiality risk
-Sensitive information may be pasted into tools without safeguards.  
-**Defence:** classify data, redact, abstract, and follow institutional rules.
-
----
-
-## 7) A central bank standard for verification
-
-Before you rely on an AI-assisted output, apply a verification routine:
-
-1. **Label the output:** draft, hypothesis, or final.
-2. **Check the foundations:** definitions, assumptions, and scope.
-3. **Verify key claims:** numbers, dates, citations, and institutional details.
-4. **Triangulate:** cross-check with primary sources and internal data.
-5. **Stress test reasoning:** ask for counterarguments and failure cases.
-6. **Document your edits:** what you changed and why.
-
----
-
-## 8) Prompting basics you can reuse
-
-### 8.1 A safe general template
+### 3.1 Policy memo template (safe, auditable)
 Copy and adapt:
 
 > You are assisting a central bank analyst.  
-> Task: [what you want].  
-> Audience: [who will read it].  
-> Scope: [what to include and exclude].  
-> Constraints: do not invent facts, do not guess numbers, flag uncertainty.  
-> Output format: [bullets, table, memo].  
-> Provide: assumptions, items requiring verification, and risks.
+> **Task:** Draft a 1-page memo on [topic].  
+> **Audience:** [Governor, MPC, supervision committee].  
+> **Scope:** Include [A, B, C]. Exclude [D, E].  
+> **Constraints:** Do not invent facts. Do not guess numbers or citations. If uncertain, write “unknown” and propose how to verify.  
+> **Output format:** Headings, short paragraphs, and a final bullet list titled “Items to verify.”  
+> **Also provide:** (i) assumptions, (ii) counterarguments, (iii) what would change the recommendation.
 
-### 8.2 A “no hallucination” add-on
-> If you are unsure, write “unknown” and propose how to verify.
+### 3.2 Research synthesis template (triangulation built in)
+> Summarise the main mechanisms and empirical strategies in this material.  
+> Then list: (i) key claims, (ii) what evidence supports each claim, (iii) what remains uncertain, (iv) the most plausible alternative interpretation.
 
-### 8.3 A review add-on
-> After drafting, critique your answer: list the weakest points, missing caveats, and what a sceptical reader would challenge.
+### 3.3 Coding support template (keeps humans in control)
+> Generate pseudocode and then Python code for [task].  
+> Explain the logic and include unit tests.  
+> Do not assume access to external data.  
+> If there are multiple approaches, present two and state trade-offs.
 
 ---
 
-## 9) Short exercises (10 minutes total)
+## 4) Workflow patterns that work in practice
 
-### Exercise A: Rewrite for policy clarity
-Take a dense paragraph from a recent internal note. Prompt the tool to rewrite it for a Governor-level audience in 150 words.  
-Then check: what did it simplify, and did it remove necessary caveats?
+### Pattern A: Draft, critique, revise
+1. Ask for a draft.
+2. Ask for a critique that lists weaknesses, missing caveats, and likely objections.
+3. Ask for a revision that fixes only those weaknesses.
 
-### Exercise B: Generate a verification checklist
-Ask the tool to produce a checklist to validate a macro claim made in a draft briefing.  
-Then compare it to your standard empirical habits.
+**Why it helps:** You create a built-in quality-control loop, which matters in policy settings.
+
+### Pattern B: Decompose the task
+Instead of “write the whole briefing,” do:
+1. Define terms and scope.
+2. Produce an outline.
+3. Draft each section with explicit constraints.
+4. Assemble and tighten.
+
+**Why it helps:** Large tasks invite hallucination and accidental overreach.
+
+### Pattern C: Make verification explicit
+Always request:
+- A list of assumptions.
+- A list of items requiring verification.
+- A list of data needs and where to source them.
+- A short “risk of misuse” section.
+
+### Pattern D: Retrieval-first when facts matter
+If the task depends on facts, base the output on a controlled document set:
+- internal notes (sanitised)
+- published statistical releases
+- official speeches and reports
+- legislation and regulatory guidance
+
+**If you cannot provide the documents, require the model to label facts as “needs verification.”**
+
+---
+
+## 5) Common failure modes and fixes
+
+### 5.1 Invented facts or citations
+**Fix:** Explicitly ban invention and require “unknown” plus a verification path.
+
+### 5.2 Spurious precision
+**Fix:** Tell the tool to avoid numbers unless provided, and to use ranges only when justified.
+
+### 5.3 Confident but shallow reasoning
+**Fix:** Request counterarguments, alternative mechanisms, and what evidence would falsify the claim.
+
+### 5.4 Policy tone without policy content
+**Fix:** Require a structured logic chain:
+- mechanism
+- evidence
+- trade-offs
+- risks
+- decision points
+
+---
+
+## 6) Video for this lecture
+
+Watch the video below, then use the discussion questions to connect the themes to central bank work.
+
+[![Watch on YouTube](https://img.youtube.com/vi/G5teYbovYJ0/0.jpg)](https://www.youtube.com/watch?v=G5teYbovYJ0)
+
+**Suggested viewing focus**
+- Where does AI raise the productivity of researchers and knowledge workers?
+- What new bottlenecks appear (verification, evaluation, coordination, incentives)?
+- What complements matter (data, institutions, skills, governance)?
+
+---
+
+## 7) Discussion questions (10 minutes)
+
+1. Which parts of a typical central bank workflow look most “R&D-like” (idea generation, testing, iteration)?
+2. Where would AI tools most likely improve productivity in your team: drafting, coding, literature mapping, or internal knowledge management?
+3. What would be your minimum governance standard before scaling AI use across a department?
+4. How would you prevent “policy laundering,” where a weak argument is dressed up as a coherent memo?
+
+---
+
+## 8) Mini-lab (20 minutes)
+
+### Exercise 1: Policy brief rewrite with verification
+Take a paragraph from a recent briefing (use a non-confidential excerpt or a synthetic example).
+
+Prompt:
+> Rewrite for an MPC audience in 150 words.  
+> Preserve all caveats.  
+> Add a final section titled “Items to verify” with 5 bullets.
+
+Deliverable:
+- Revised paragraph
+- “Items to verify” list
+
+### Exercise 2: Build a prompt that prevents hallucination
+Prompt:
+> Create a structured outline for a note on [topic].  
+> For each section, list what data or sources are required.  
+> If any claim would require external confirmation, label it “needs verification.”
+
+Deliverable:
+- Outline
+- Source and data requirements
+- Marked “needs verification” items
+
+---
+
+## 9) Practical guardrails for central banks
+
+- Do not paste confidential, market-sensitive, or personally identifiable information into tools that are not approved for such data.
+- Use abstraction and redaction. Replace institution names, dates, and figures with placeholders when needed.
+- Keep an audit trail for high-stakes outputs: prompt, model version (if known), edits made, and verification steps taken.
+- Treat final accountability as human, even when drafting is AI-assisted.
 
 ---
 
 ## 10) Key takeaways
 
-- AI tools are best treated as accelerators for drafting, organisation, and exploration.
-- The model optimises for plausibility, not truth, so verification is not optional.
-- Governance matters because errors scale quickly in high-trust institutions.
-- The best results come from clear prompts, constrained outputs, and disciplined checking.
-
----
-
-## Suggested further reading
-- Model risk management and validation principles (internal guidance, plus relevant supervisory standards).
-- Practical notes on retrieval and citation-based workflows for institutional use.
-- Recent central bank speeches or BIS notes on AI in finance and public institutions (use your institution’s curated list).
-
+- Better prompts are better specifications.
+- Reliable workflows reduce risk more than clever one-shot prompts.
+- Verification is a feature, not an afterthought.
+- Central bank credibility depends on disciplined use, not just productivity gains.
 
