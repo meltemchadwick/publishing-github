@@ -52,3 +52,6 @@ A large language model (LLM) is trained to predict the next token (a piece of a 
 - It may fill gaps with invented details.
 - It may cite s
 
+#DISCLAIMER
+
+This github module is intended solely as a learning exercise. All the output is largely AI-generated. It is a fictional course setup. Videos are selected from Youtube
